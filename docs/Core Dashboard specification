@@ -1,0 +1,128 @@
+# CORE DASHBOARD SPEC (RCGEN Global App)
+
+## Purpose
+This document defines what happens after a user logs in.
+The dashboard must change automatically depending on:
+
+- Selected portal
+- User role
+- Permission level
+
+RCGEN is a 4-in-1 system with separate login portals:
+1. Core Governance
+2. Educare (School)
+3. Church
+4. Foundation
+
+---
+
+# SYSTEM RULES
+
+- The system must detect the selected portal.
+- The system must detect the authenticated user role.
+- The system must load only the data relevant to that portal.
+- All actions must be logged for audit and compliance.
+
+---
+
+# 1️⃣ CORE GOVERNANCE DASHBOARD
+
+Visible To:
+- CEO
+- Executive Directors
+- Board Members
+- Admin
+
+Main Features:
+- Organization-wide statistics
+- Financial summary (all portals)
+- Risk & compliance alerts
+- Active projects overview
+- Staff overview
+- Quick access to all portals
+- Reports & analytics panel
+
+Security:
+- Full access but logged
+- Role-based restrictions on financial editing
+
+---
+
+# 2️⃣ EDUCARE (SCHOOL) DASHBOARD
+
+Visible To:
+- Principal
+- Teachers
+- Admin Staff
+- Finance Officer
+
+Main Features:
+- Student count
+- Class overview
+- Attendance tracker
+- Fee tracking status
+- Teacher activity summary
+- Parent communication center
+- Academic reports
+
+Security:
+- Teachers only see their classes
+- Finance role sees payment data
+- Principal sees full school overview
+
+---
+
+# 3️⃣ CHURCH DASHBOARD
+
+Visible To:
+- Pastor
+- Ministry Leaders
+- Church Admin
+- Finance Team
+
+Main Features:
+- Members count
+- Service schedule
+- Tithes & offerings summary
+- Event management
+- Ministry groups
+- Prayer request management
+- Volunteer scheduling
+
+Security:
+- Finance data restricted
+- Ministry leaders only see their groups
+- Pastor sees full overview
+
+---
+
+# 4️⃣ FOUNDATION DASHBOARD
+
+Visible To:
+- Foundation Manager
+- Volunteers
+- Admin
+- Finance Officer
+
+Main Features:
+- Beneficiary count
+- Feeding scheme statistics
+- Donations tracker
+- Volunteer management
+- Project progress overview
+- Community outreach reports
+
+Security:
+- Volunteers have limited edit rights
+- Finance controls donation data
+- Manager has full project visibility
+
+---
+
+# GLOBAL SECURITY RULES
+
+- Role-based authentication required
+- Portal-based data isolation
+- Audit logging enabled
+- Session timeout after inactivity
+- Multi-factor authentication for leadership roles
