@@ -1,0 +1,81 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function getUserData() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data;
+    }
+
+    function userPortal() {
+      return getUserData().portal;
+    }
+
+    function userRole() {
+      return getUserData().role;
+    }
+
+    function isCore() {
+      return userPortal() == "core";
+    }
+
+    function isEducare() {
+      return userPortal() == "educare";
+    }
+
+    function isChurch() {
+      return userPortal() == "church";
+    }
+
+    function isFoundation() {
+      return userPortal() == "foundation";
+    }
+
+    // CORE: Full Access
+    match /{document=**} {
+      allow read, write: if isAuthenticated() && isCore();
+    }
+
+    // EDUCARE COLLECTIONS
+    match /children/{doc} {
+      allow read, write: if isAuthenticated() && isEducare();
+    }
+
+    match /classes/{doc} {
+      allow read, write: if isAuthenticated() && isEducare();
+    }
+
+    match /attendance/{doc} {
+      allow read, write: if isAuthenticated() && isEducare();
+    }
+
+    // CHURCH COLLECTIONS
+    match /members/{doc} {
+      allow read, write: if isAuthenticated() && isChurch();
+    }
+
+    match /events/{doc} {
+      allow read, write: if isAuthenticated() && isChurch();
+    }
+
+    match /offerings/{doc} {
+      allow read, write: if isAuthenticated() && isChurch();
+    }
+
+    // FOUNDATION COLLECTIONS
+    match /beneficiaries/{doc} {
+      allow read, write: if isAuthenticated() && isFoundation();
+    }
+
+    match /donations/{doc} {
+      allow read, write: if isAuthenticated() && isFoundation();
+    }
+
+    match /projects/{doc} {
+      allow read, write: if isAuthenticated() && isFoundation();
+    }
+  }
+}
