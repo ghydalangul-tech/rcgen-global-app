@@ -28,10 +28,16 @@ Let the user choose which RCGEN system they are entering before login.
 - Description: Governance, HR, Finance summary, Compliance, Reports
 
 ## Behavior
-- When user taps a portal:
-  - Save selectedPortal = "educare" | "church" | "foundation" | "core"
-  - Navigate to: LoginScreen(selectedPortal)
+- When user taps a portal card:
+  - Highlight the selected portal card
+  - Set selectedPortal = "educare" | "church" | "foundation" | "core"
+  - Enable a button: “Continue”
 
+- Continue button:
+  - Navigate to: LoginScreen(selectedPortal)
+4. Continue button (disabled until a portal is selected)
+5. Optional: “Help” link (explains what each portal is)
+- Add a small link: “Change selection” (clears selectedPortal)
 ## Rules
 - User cannot access portal pages without login (except public info pages if we add them later).
 - Add a “Switch Portal” option only on Logout screen (or profile menu).
