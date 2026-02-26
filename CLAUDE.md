@@ -6,7 +6,9 @@ This file provides context, conventions, and guidance for AI assistants (Claude 
 
 ## Project Overview
 
-**RCGEN Global App** is a digital platform for Revival Christian Group Children of All Nations (RCGEN), a South African-based organisation. It is a unified multi-portal application that manages children, donations, volunteers, and communications across four distinct operational areas.
+**RCGEN** (display name) is the official app name used throughout the UI. The full legal name is Revival Christian Group Children of All Nations. It is a unified multi-portal application that manages children, donations, volunteers, and communications across four distinct operational areas.
+
+> **Branding rule:** The app must always display as **"RCGEN"** — not "RCGEN Global App" — in all screens, titles, splash screens, app store listings, and marketing material.
 
 - **Contact:** info@rcgen.org.za
 - **Website:** rcgen.org.za
@@ -313,3 +315,5 @@ Delete <file>
 6. **No build scripts exist yet.** The project has no Makefile, CI/CD, or test infrastructure. When adding these, document them here.
 
 7. **Contact for RCGEN-specific queries:** info@rcgen.org.za
+
+8. **App display name is "RCGEN".** All UI text, screen titles, app name fields (Android `app_name`, iOS `CFBundleDisplayName`, Flutter `name` in `pubspec.yaml`) must read `RCGEN`, not "RCGEN Global App".
