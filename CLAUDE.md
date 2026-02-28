@@ -242,12 +242,45 @@ AZURE_OPENAI_ENDPOINT
 - Follow official Dart style guide and use `dart format`
 - Use `flutter analyze` before committing
 - Organise Flutter source inside `apps/mobile/lib/`:
+  - `lib/theme/` — Brand colors and Material theme (`app_colors.dart`, `app_theme.dart`)
   - `lib/screens/` — UI screens
   - `lib/widgets/` — Reusable components
   - `lib/services/` — Business logic, API calls
   - `lib/models/` — Data models
   - `lib/main.dart` — Entry point
 - Screen routing should pass `selectedPortal` as a parameter, not as a global
+
+### Brand Colors
+RCGEN uses a **White · Gold · Blue** palette. Always source colors from `app_colors.dart` — never use raw hex values in widgets.
+
+| Token | Hex | Usage |
+|---|---|---|
+| `AppColors.primaryBlue` | `#0B3D91` | App bar, primary buttons background, headers |
+| `AppColors.primaryBlueDark` | `#072265` | Navigation bar background, deep accents |
+| `AppColors.primaryBlueLight` | `#3A65B5` | Hover / focus states |
+| `AppColors.gold` | `#D4A827` | CTA buttons, icons, highlights |
+| `AppColors.goldLight` | `#EDD35A` | Button hover, badge backgrounds |
+| `AppColors.white` | `#FFFFFF` | Card backgrounds, text on blue/gold |
+| `AppColors.surface` | `#F4F6FB` | Scaffold / page background |
+
+**Portal accent colors** (dashboard cards):
+
+| Portal | Token | Hex |
+|---|---|---|
+| Core Governance | `AppColors.portalCore` | `#0B3D91` |
+| Educare | `AppColors.portalEducare` | `#1B6CA8` |
+| Church | `AppColors.portalChurch` | `#6A1B9A` |
+| Foundation | `AppColors.portalFoundation` | `#1B7A4A` |
+
+Apply the theme in `main.dart`:
+```dart
+MaterialApp(
+  title: 'RCGEN',
+  theme: AppTheme.light,
+  darkTheme: AppTheme.dark,
+  ...
+)
+```
 
 ### Firebase / Firestore
 - Portal isolation is mandatory — never write data to a collection outside the user's assigned portal
