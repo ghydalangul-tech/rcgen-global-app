@@ -3,7 +3,7 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#1a2744">
+<meta name="theme-color" content="#1a56db">
 <meta name="description" content="<?php echo esc_attr( get_bloginfo( 'description' ) ?: 'RCGEN — Revival Christian Group Children of All Nations. Serving the Vrygrond community through faith, education, and care.' ); ?>">
 <link rel="profile" href="https://gmpg.org/xfn/11">
 <link rel="preconnect" href="https://fonts.googleapis.com">

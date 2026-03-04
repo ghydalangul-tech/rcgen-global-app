@@ -403,7 +403,7 @@ $hero_subtext = get_theme_mod(
 
       <article class="blog-card fade-in">
         <div class="blog-card-img">
-          <div style="height:100%;background:linear-gradient(135deg,#1a2744,#6b21a8);"></div>
+          <div style="height:100%;background:linear-gradient(135deg,#0f2d6b,#1a56db);"></div>
           <span class="blog-cat"><?php esc_html_e( 'RCGEN Church', 'rcgen-theme' ); ?></span>
         </div>
         <div class="blog-card-body">
