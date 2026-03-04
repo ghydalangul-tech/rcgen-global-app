@@ -391,57 +391,181 @@ function rcgen_disable_bizberg_sidebar_on_front() {
 }
 add_action( 'template_redirect', 'rcgen_disable_bizberg_sidebar_on_front' );
 
-// ─── Custom walker for nav menu ───────────────────────────────────────────────
+// ─── Custom walker for nav menu (supports dropdowns) ─────────────────────────
 
 class RCGEN_Nav_Walker extends Walker_Nav_Menu {
-	public function start_el( &$output, $item, $depth = 0, $args = null, $id = 0 ) {
-		$classes   = empty( $item->classes ) ? array() : (array) $item->classes;
-		$classes[] = 'menu-item-' . $item->ID;
-		$class_str = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args, $depth ) );
 
+	/** Open <li> */
+	public function start_lvl( &$output, $depth = 0, $args = null ) {
+		$indent  = str_repeat( "\t", $depth );
+		$output .= "\n{$indent}<ul class=\"sub-menu\" aria-hidden=\"true\">\n";
+	}
+
+	/** Close </li> */
+	public function end_lvl( &$output, $depth = 0, $args = null ) {
+		$indent  = str_repeat( "\t", $depth );
+		$output .= "{$indent}</ul>\n";
+	}
+
+	/** Output each <li><a> */
+	public function start_el( &$output, $item, $depth = 0, $args = null, $id = 0 ) {
+		$classes      = empty( $item->classes ) ? array() : (array) $item->classes;
+		$classes[]    = 'menu-item-' . $item->ID;
+		$has_children = in_array( 'menu-item-has-children', $classes );
+
+		$li_classes = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args, $depth ) );
+		$output    .= '<li class="' . esc_attr( $li_classes ) . '">';
+
+		// Link attributes
 		$atts = array(
 			'href'  => $item->url,
-			'title' => $item->attr_title,
 			'class' => '',
 		);
-
-		// Mark donate link
-		if ( strpos( strtolower( $item->title ), 'donate' ) !== false ) {
-			$atts['class'] = 'nav-donate';
+		if ( $item->attr_title ) {
+			$atts['title'] = $item->attr_title;
 		}
-
-		if ( in_array( 'current-menu-item', $classes ) || in_array( 'current_page_item', $classes ) ) {
-			$atts['class'] .= ' current';
-		}
-
-		$atts = apply_filters( 'nav_menu_link_attributes', $atts, $item, $args, $depth );
-		$attr_str = '';
-		foreach ( $atts as $attr => $value ) {
-			if ( ! empty( $value ) ) {
-				$attr_str .= ' ' . $attr . '="' . esc_attr( $value ) . '"';
+		if ( $item->target ) {
+			$atts['target'] = $item->target;
+			if ( '_blank' === $item->target ) {
+				$atts['rel'] = 'noopener noreferrer';
 			}
 		}
 
-		$title = apply_filters( 'the_title', $item->title, $item->ID );
-		$output .= '<a' . $attr_str . '>' . $title . '</a>';
+		// Special link classes
+		$title_lower = strtolower( $item->title );
+		if ( strpos( $title_lower, 'donate' ) !== false ) {
+			$atts['class'] = 'nav-donate';
+		}
+		if ( in_array( 'current-menu-item', $classes ) || in_array( 'current_page_item', $classes ) ) {
+			$atts['class'] .= ' current';
+		}
+		if ( $has_children && $depth === 0 ) {
+			$atts['aria-haspopup'] = 'true';
+			$atts['aria-expanded'] = 'false';
+			$atts['class']        .= ' has-dropdown';
+		}
+
+		$atts     = apply_filters( 'nav_menu_link_attributes', $atts, $item, $args, $depth );
+		$attr_str = '';
+		foreach ( $atts as $attr => $value ) {
+			if ( ! empty( $value ) || $value === '' ) {
+				$attr_str .= ' ' . $attr . '="' . esc_attr( trim( $value ) ) . '"';
+			}
+		}
+
+		$title   = apply_filters( 'the_title', $item->title, $item->ID );
+		$output .= '<a' . $attr_str . '>' . $title;
+		if ( $has_children && $depth === 0 ) {
+			$output .= ' <span class="dropdown-arrow" aria-hidden="true">&#x25BE;</span>';
+		}
+		$output .= '</a>';
+	}
+
+	public function end_el( &$output, $item, $depth = 0, $args = null ) {
+		$output .= "</li>\n";
 	}
 }
 
-// ─── Fallback nav ─────────────────────────────────────────────────────────────
+// ─── Fallback nav (shown when no WP menu is assigned) ─────────────────────────
 
 function rcgen_fallback_nav() {
-	$links = array(
-		home_url( '/' )              => __( 'Home',     'rcgen-theme' ),
-		home_url( '/about' )         => __( 'About',    'rcgen-theme' ),
-		home_url( '/organisations' ) => __( 'Our 4 Organisations', 'rcgen-theme' ),
-		home_url( '/programs' )      => __( 'Programs', 'rcgen-theme' ),
-		home_url( '/gallery' )       => __( 'Gallery',  'rcgen-theme' ),
-		home_url( '/blog' )          => __( 'Blog',     'rcgen-theme' ),
-		home_url( '/donate' )        => __( 'Donate',   'rcgen-theme' ),
-		home_url( '/contact' )       => __( 'Contact',  'rcgen-theme' ),
+	$current = trailingslashit( home_url( parse_url( $_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH ) ) );
+	$home    = trailingslashit( home_url( '/' ) );
+
+	$top_links = array(
+		'/'            => __( 'Home',    'rcgen-theme' ),
+		'/about'       => __( 'About',   'rcgen-theme' ),
+		'/gallery'     => __( 'Gallery', 'rcgen-theme' ),
+		'/blog'        => __( 'Blog',    'rcgen-theme' ),
+		'/survey'      => __( 'Survey',  'rcgen-theme' ),
+		'/contact'     => __( 'Contact', 'rcgen-theme' ),
+		'/donate'      => __( 'Donate',  'rcgen-theme' ),
 	);
-	foreach ( $links as $url => $label ) {
-		$class = ( strpos( $label, 'Donate' ) !== false ) ? ' class="nav-donate"' : '';
-		echo '<a href="' . esc_url( $url ) . '"' . $class . '>' . esc_html( $label ) . '</a>';
+
+	$org_links = array(
+		'/rcgen'             => __( 'RCGEN (Church)',     'rcgen-theme' ),
+		'/rcgen-educare'     => __( 'RCGEN Educare',      'rcgen-theme' ),
+		'/rcgen-foundation'  => __( 'RCGEN Foundation',   'rcgen-theme' ),
+		'/rcgen-group'       => __( 'RCGEN Group',        'rcgen-theme' ),
+	);
+
+	echo '<ul class="nav-menu">';
+
+	foreach ( $top_links as $slug => $label ) {
+		$url        = home_url( $slug );
+		$is_current = ( trailingslashit( $url ) === $current );
+		$class      = '';
+
+		if ( strpos( $label, 'Donate' ) !== false ) {
+			$class = 'nav-donate';
+		}
+		if ( $is_current ) {
+			$class = trim( $class . ' current' );
+		}
+
+		// Insert the "Our 4 Organisations" dropdown before Gallery
+		if ( '/gallery' === $slug ) {
+			echo '<li class="menu-item menu-item-has-children">';
+			echo '<a href="' . esc_url( home_url( '/organisations' ) ) . '" class="has-dropdown" aria-haspopup="true" aria-expanded="false">';
+			echo esc_html__( 'Our Organisations', 'rcgen-theme' );
+			echo ' <span class="dropdown-arrow" aria-hidden="true">&#x25BE;</span></a>';
+			echo '<ul class="sub-menu" aria-hidden="true">';
+			foreach ( $org_links as $os => $ol ) {
+				$ourl  = home_url( $os );
+				$ocur  = ( trailingslashit( $ourl ) === $current ) ? ' current' : '';
+				echo '<li class="menu-item"><a href="' . esc_url( $ourl ) . '" class="' . esc_attr( trim( $ocur ) ) . '">' . esc_html( $ol ) . '</a></li>';
+			}
+			echo '</ul></li>';
+		}
+
+		$attr = $class ? ' class="' . esc_attr( $class ) . '"' : '';
+		echo '<li class="menu-item"><a href="' . esc_url( $url ) . '"' . $attr . '>' . esc_html( $label ) . '</a></li>';
+	}
+
+	echo '</ul>';
+}
+
+// ─── Survey form AJAX handler ─────────────────────────────────────────────────
+
+function rcgen_handle_survey() {
+	check_ajax_referer( 'rcgen-nonce', 'nonce' );
+
+	$name         = sanitize_text_field( $_POST['survey_name']      ?? '' );
+	$area         = sanitize_text_field( $_POST['survey_area']      ?? '' );
+	$service      = sanitize_text_field( $_POST['survey_service']   ?? '' );
+	$heard        = sanitize_text_field( $_POST['survey_heard']     ?? '' );
+	$feedback     = sanitize_textarea_field( $_POST['survey_feedback'] ?? '' );
+	$volunteer    = sanitize_text_field( $_POST['survey_volunteer'] ?? '' );
+	$email        = sanitize_email( $_POST['survey_email']          ?? '' );
+
+	if ( ! $name || ! $area ) {
+		wp_send_json_error( array( 'message' => __( 'Please fill in your name and area.', 'rcgen-theme' ) ) );
+	}
+
+	$to      = get_option( 'admin_email' );
+	$subject = '[RCGEN Survey] New Community Survey Response';
+	$headers = array( 'Content-Type: text/plain; charset=UTF-8' );
+	if ( $email ) {
+		$headers[] = 'Reply-To: ' . $email;
+	}
+
+	$body  = "RCGEN Community Survey Response\n";
+	$body .= str_repeat( '─', 40 ) . "\n\n";
+	$body .= "Full Name:          $name\n";
+	$body .= "Area/Neighbourhood: $area\n";
+	$body .= "Service used:       $service\n";
+	$body .= "Heard about us via: $heard\n";
+	$body .= "Willing to volunteer: $volunteer\n";
+	$body .= "Email: " . ( $email ?: '(not provided)' ) . "\n\n";
+	$body .= "How can we serve better:\n$feedback\n";
+
+	$sent = wp_mail( $to, $subject, $body, $headers );
+
+	if ( $sent ) {
+		wp_send_json_success( array( 'message' => __( 'Thank you for your response! We value your feedback.', 'rcgen-theme' ) ) );
+	} else {
+		wp_send_json_error( array( 'message' => __( 'Sorry, we could not record your survey. Please try again.', 'rcgen-theme' ) ) );
 	}
 }
+add_action( 'wp_ajax_rcgen_survey',        'rcgen_handle_survey' );
+add_action( 'wp_ajax_nopriv_rcgen_survey', 'rcgen_handle_survey' );

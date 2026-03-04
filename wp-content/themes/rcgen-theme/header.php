@@ -40,7 +40,7 @@
         wp_nav_menu( array(
           'theme_location' => 'primary',
           'container'      => false,
-          'items_wrap'     => '%3$s',
+          'items_wrap'     => '<ul id="%1$s" class="nav-menu">%3$s</ul>',
           'walker'         => new RCGEN_Nav_Walker(),
           'fallback_cb'    => 'rcgen_fallback_nav',
         ) );

@@ -35,13 +35,28 @@
       document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
-    // Close nav when a link is clicked
+    // Close nav when a non-dropdown link is clicked
     primaryNav.querySelectorAll('a').forEach(function (link) {
-      link.addEventListener('click', function () {
-        primaryNav.classList.remove('open');
-        navToggle.classList.remove('open');
-        navToggle.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
+      link.addEventListener('click', function (e) {
+        var parentLi = link.closest('li');
+        var isMobile = window.innerWidth <= 960;
+
+        if (isMobile && parentLi && parentLi.classList.contains('menu-item-has-children')) {
+          // On mobile, toggle the sub-menu instead of navigating
+          e.preventDefault();
+          var isOpen = parentLi.classList.toggle('dropdown-open');
+          link.setAttribute('aria-expanded', isOpen.toString());
+          var sub = parentLi.querySelector('.sub-menu');
+          if (sub) sub.setAttribute('aria-hidden', (!isOpen).toString());
+          return;
+        }
+
+        if (!parentLi || !parentLi.classList.contains('menu-item-has-children')) {
+          primaryNav.classList.remove('open');
+          navToggle.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        }
       });
     });
 
@@ -55,6 +70,55 @@
       }
     });
   }
+
+  // ─── Desktop dropdown keyboard + click toggle ─────────────────────────────
+
+  document.querySelectorAll('.nav-menu .menu-item-has-children > a').forEach(function (trigger) {
+    var li = trigger.parentElement;
+
+    // Click toggle for desktop (hover already handled by CSS)
+    trigger.addEventListener('click', function (e) {
+      if (window.innerWidth > 960) {
+        e.preventDefault();
+        var isOpen = li.classList.toggle('dropdown-open');
+        trigger.setAttribute('aria-expanded', isOpen.toString());
+        var sub = li.querySelector('.sub-menu');
+        if (sub) sub.setAttribute('aria-hidden', (!isOpen).toString());
+      }
+    });
+
+    // Keyboard: Enter/Space to open, Escape to close
+    trigger.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        trigger.click();
+      }
+      if (e.key === 'Escape') {
+        li.classList.remove('dropdown-open');
+        trigger.setAttribute('aria-expanded', 'false');
+        trigger.focus();
+      }
+    });
+
+    // Close when focus leaves the dropdown entirely
+    li.addEventListener('focusout', function (e) {
+      if (!li.contains(e.relatedTarget)) {
+        li.classList.remove('dropdown-open');
+        trigger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+
+  // Close open dropdowns when clicking anywhere outside the nav
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.nav-menu')) {
+      document.querySelectorAll('.nav-menu .dropdown-open').forEach(function (li) {
+        li.classList.remove('dropdown-open');
+        var t = li.querySelector(':scope > a');
+        if (t) t.setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
 
   // ─── Smooth Scroll for anchor links ──────────────────────────────────────
 
