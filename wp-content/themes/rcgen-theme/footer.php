@@ -60,10 +60,10 @@
       <div class="footer-col">
         <h4><?php esc_html_e( 'Our Programs', 'rcgen-theme' ); ?></h4>
         <nav class="footer-links" aria-label="<?php esc_attr_e( 'Programs navigation', 'rcgen-theme' ); ?>">
-          <a href="<?php echo esc_url( home_url( '/organisations/rcgen-ministry' ) ); ?>">&#x1F54A; <?php esc_html_e( 'RCGEN Ministry', 'rcgen-theme' ); ?></a>
-          <a href="<?php echo esc_url( home_url( '/organisations/ngn-help' ) ); ?>">&#x1F91D; <?php esc_html_e( 'NGN Help', 'rcgen-theme' ); ?></a>
+          <a href="<?php echo esc_url( home_url( '/organisations/rcgen' ) ); ?>">&#x1F54A; <?php esc_html_e( 'RCGEN', 'rcgen-theme' ); ?></a>
+          <a href="<?php echo esc_url( home_url( '/organisations/rcgen-group' ) ); ?>">&#x1F91D; <?php esc_html_e( 'RCGEN Group', 'rcgen-theme' ); ?></a>
           <a href="<?php echo esc_url( home_url( '/organisations/rcgen-educare' ) ); ?>">&#x1F393; <?php esc_html_e( 'RCGEN Educare', 'rcgen-theme' ); ?></a>
-          <a href="<?php echo esc_url( home_url( '/organisations/feeding-scheme' ) ); ?>">&#x1F37D; <?php esc_html_e( 'Feeding Scheme', 'rcgen-theme' ); ?></a>
+          <a href="<?php echo esc_url( home_url( '/organisations/rcgen-foundation' ) ); ?>">&#x1F37D; <?php esc_html_e( 'RCGEN Foundation', 'rcgen-theme' ); ?></a>
           <a href="<?php echo esc_url( home_url( '/events' ) ); ?>">&#x1F4C5; <?php esc_html_e( 'Events', 'rcgen-theme' ); ?></a>
           <a href="<?php echo esc_url( home_url( '/volunteer' ) ); ?>">&#x2764; <?php esc_html_e( 'Volunteer', 'rcgen-theme' ); ?></a>
         </nav>

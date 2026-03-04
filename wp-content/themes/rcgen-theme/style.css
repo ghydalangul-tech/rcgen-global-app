@@ -29,10 +29,10 @@ Tags: nonprofit, community, church, custom-background, custom-logo, custom-menu,
   --color-text:      #2d3748;
 
   /* Organisation accent colours */
-  --color-ministry:  #6b21a8;   /* Deep purple */
-  --color-ngn:       #ea580c;   /* Warm orange */
-  --color-educare:   #0284c7;   /* Sky blue */
-  --color-feeding:   #16a34a;   /* Fresh green */
+  --color-church:      #6b21a8;   /* Deep purple  — RCGEN (Church) */
+  --color-group:       #ea580c;   /* Warm orange  — RCGEN Group */
+  --color-educare:     #0284c7;   /* Sky blue     — RCGEN Educare */
+  --color-foundation:  #16a34a;   /* Fresh green  — RCGEN Foundation */
 
   /* Typography */
   --font-heading: 'Playfair Display', Georgia, serif;
@@ -623,19 +623,19 @@ p:last-child { margin-bottom: 0; }
   opacity: 0.08;
 }
 
-.org-card--ministry .org-card-header { background: linear-gradient(135deg, #f3e8ff 0%, #faf5ff 100%); border-top: 4px solid var(--color-ministry); }
-.org-card--ministry .org-card-header::before { background: var(--color-ministry); }
-.org-card--ministry .org-icon { color: var(--color-ministry); }
-.org-card--ministry .org-tag { background: rgba(107,33,168,0.1); color: var(--color-ministry); }
-.org-card--ministry .org-link { color: var(--color-ministry); }
-.org-card--ministry .org-link:hover { background: rgba(107,33,168,0.08); }
+.org-card--church .org-card-header { background: linear-gradient(135deg, #f3e8ff 0%, #faf5ff 100%); border-top: 4px solid var(--color-church); }
+.org-card--church .org-card-header::before { background: var(--color-church); }
+.org-card--church .org-icon { color: var(--color-church); }
+.org-card--church .org-tag { background: rgba(107,33,168,0.1); color: var(--color-church); }
+.org-card--church .org-link { color: var(--color-church); }
+.org-card--church .org-link:hover { background: rgba(107,33,168,0.08); }
 
-.org-card--ngn .org-card-header { background: linear-gradient(135deg, #fff7ed 0%, #fffbf5 100%); border-top: 4px solid var(--color-ngn); }
-.org-card--ngn .org-card-header::before { background: var(--color-ngn); }
-.org-card--ngn .org-icon { color: var(--color-ngn); }
-.org-card--ngn .org-tag { background: rgba(234,88,12,0.1); color: var(--color-ngn); }
-.org-card--ngn .org-link { color: var(--color-ngn); }
-.org-card--ngn .org-link:hover { background: rgba(234,88,12,0.08); }
+.org-card--group .org-card-header { background: linear-gradient(135deg, #fff7ed 0%, #fffbf5 100%); border-top: 4px solid var(--color-group); }
+.org-card--group .org-card-header::before { background: var(--color-group); }
+.org-card--group .org-icon { color: var(--color-group); }
+.org-card--group .org-tag { background: rgba(234,88,12,0.1); color: var(--color-group); }
+.org-card--group .org-link { color: var(--color-group); }
+.org-card--group .org-link:hover { background: rgba(234,88,12,0.08); }
 
 .org-card--educare .org-card-header { background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 100%); border-top: 4px solid var(--color-educare); }
 .org-card--educare .org-card-header::before { background: var(--color-educare); }
@@ -644,12 +644,12 @@ p:last-child { margin-bottom: 0; }
 .org-card--educare .org-link { color: var(--color-educare); }
 .org-card--educare .org-link:hover { background: rgba(2,132,199,0.08); }
 
-.org-card--feeding .org-card-header { background: linear-gradient(135deg, #dcfce7 0%, #f0fdf4 100%); border-top: 4px solid var(--color-feeding); }
-.org-card--feeding .org-card-header::before { background: var(--color-feeding); }
-.org-card--feeding .org-icon { color: var(--color-feeding); }
-.org-card--feeding .org-tag { background: rgba(22,163,74,0.1); color: var(--color-feeding); }
-.org-card--feeding .org-link { color: var(--color-feeding); }
-.org-card--feeding .org-link:hover { background: rgba(22,163,74,0.08); }
+.org-card--foundation .org-card-header { background: linear-gradient(135deg, #dcfce7 0%, #f0fdf4 100%); border-top: 4px solid var(--color-foundation); }
+.org-card--foundation .org-card-header::before { background: var(--color-foundation); }
+.org-card--foundation .org-icon { color: var(--color-foundation); }
+.org-card--foundation .org-tag { background: rgba(22,163,74,0.1); color: var(--color-foundation); }
+.org-card--foundation .org-link { color: var(--color-foundation); }
+.org-card--foundation .org-link:hover { background: rgba(22,163,74,0.08); }
 
 .org-icon {
   font-size: 2.8rem;
@@ -718,10 +718,10 @@ p:last-child { margin-bottom: 0; }
   flex-shrink: 0;
 }
 
-.org-card--ministry .org-card-features li::before { background: var(--color-ministry); }
-.org-card--ngn      .org-card-features li::before { background: var(--color-ngn); }
+.org-card--church .org-card-features li::before { background: var(--color-church); }
+.org-card--group      .org-card-features li::before { background: var(--color-group); }
 .org-card--educare  .org-card-features li::before { background: var(--color-educare); }
-.org-card--feeding  .org-card-features li::before { background: var(--color-feeding); }
+.org-card--foundation  .org-card-features li::before { background: var(--color-foundation); }
 
 .org-link {
   display: inline-flex;
