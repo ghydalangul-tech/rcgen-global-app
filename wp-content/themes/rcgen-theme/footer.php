@@ -46,7 +46,7 @@
               home_url( '/gallery' )       => __( 'Gallery',           'rcgen-theme' ),
               home_url( '/blog' )          => __( 'Blog &amp; News',   'rcgen-theme' ),
               home_url( '/contact' )       => __( 'Contact Us',        'rcgen-theme' ),
-              home_url( '/donate' )        => __( 'Donate',            'rcgen-theme' ),
+              home_url( '/donations' )     => __( 'Donate',            'rcgen-theme' ),
             );
             foreach ( $footer_links as $url => $label ) {
               echo '<a href="' . esc_url( $url ) . '">' . $label . '</a>';
@@ -98,7 +98,7 @@
         <?php endif; ?>
 
         <div style="margin-top:20px;">
-          <a href="<?php echo esc_url( home_url( '/donate' ) ); ?>" class="btn btn-primary" style="font-size:0.85rem; padding:10px 24px;">
+          <a href="<?php echo esc_url( home_url( '/donations' ) ); ?>" class="btn btn-primary" style="font-size:0.85rem; padding:10px 24px;">
             &#x2764; <?php esc_html_e( 'Donate Now', 'rcgen-theme' ); ?>
           </a>
         </div>
