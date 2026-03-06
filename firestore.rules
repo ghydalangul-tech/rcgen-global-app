@@ -77,5 +77,32 @@ service cloud.firestore {
     match /projects/{doc} {
       allow read, write: if isAuthenticated() && isFoundation();
     }
+
+    // ---- PUBLIC APP CONTENT (Live Stream, Events, Sermons) ----
+    match /sermons/{entity}/items/{doc} {
+      allow read: if true;
+      allow write: if isAuthenticated() && request.auth.token.admin == true;
+    }
+
+    match /events/{entity}/items/{doc} {
+      allow read: if true;
+      allow write: if isAuthenticated() && request.auth.token.admin == true;
+    }
+
+    match /events/{entity}/items/{eventId}/registrations/{regDoc} {
+      allow read: if isAuthenticated() && request.auth.token.admin == true;
+      allow create: if isAuthenticated();
+    }
+
+    match /streams/{entity}/current {
+      allow read: if true;
+      allow write: if isAuthenticated() && request.auth.token.admin == true;
+    }
+
+    // ---- DONATIONS (authenticated users) ----
+    match /donations/{entity}/transactions/{doc} {
+      allow read: if isAuthenticated() && request.auth.uid == resource.data.userId;
+      allow create: if isAuthenticated();
+    }
   }
 }
