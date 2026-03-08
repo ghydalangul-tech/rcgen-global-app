@@ -63,6 +63,9 @@ Tags: nonprofit, community, church, custom-background, custom-logo, custom-menu,
   padding: 0;
 }
 
+/* Prevent horizontal overflow on all screens */
+html, body { overflow-x: hidden; max-width: 100%; }
+
 html {
   scroll-behavior: smooth;
   font-size: 16px;
@@ -245,10 +248,12 @@ p:last-child { margin-bottom: 0; }
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
   height: 72px;
-  padding: 0 20px;
+  padding: 0 24px;
   max-width: var(--container-max);
   margin: 0 auto;
+  overflow: visible;
 }
 
 /* Logo */
@@ -412,25 +417,39 @@ p:last-child { margin-bottom: 0; }
 .nav-toggle {
   display: none;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 5px;
-  background: none;
-  border: none;
+  background: rgba(255,255,255,0.12);
+  border: 1.5px solid rgba(255,255,255,0.3);
+  border-radius: var(--radius-sm);
   cursor: pointer;
-  padding: 4px;
+  padding: 8px 10px;
   z-index: 1100;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  transition: background var(--transition), border-color var(--transition);
+}
+
+.nav-toggle:hover,
+.nav-toggle.open {
+  background: rgba(255,255,255,0.2);
+  border-color: var(--color-gold);
 }
 
 .nav-toggle span {
   display: block;
-  width: 26px;
+  width: 22px;
   height: 2px;
   background: var(--color-white);
   border-radius: 2px;
   transition: all var(--transition);
+  transform-origin: center;
 }
 
 .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
 .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 @media (max-width: 960px) {
@@ -534,11 +553,14 @@ p:last-child { margin-bottom: 0; }
 .hero-content {
   position: relative;
   z-index: 2;
+  width: 100%;
   max-width: 720px;
-  padding: 0 20px;
+  padding: 90px 24px 0;
   margin: 0 auto;
   text-align: center;
-  padding-top: 90px;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .hero-badge {
@@ -1283,7 +1305,7 @@ p:last-child { margin-bottom: 0; }
    FOOTER
    ========================================================= */
 #site-footer {
-  background: var(--color-navy-dark);
+  background: var(--color-navy);
   color: rgba(255,255,255,0.8);
   padding: 72px 0 0;
 }
@@ -1847,4 +1869,237 @@ p:last-child { margin-bottom: 0; }
   gap: 14px;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN — Full Breakpoint System
+   ========================================================= */
+
+/* ── Desktop large (1200px+) ───────────────────────────── */
+@media (min-width: 1200px) {
+  .nav-wrapper { padding: 0 40px; }
+
+  /* Give nav items a touch more breathing room */
+  .nav-menu a { padding: 8px 16px; }
+  .nav-menu .nav-donate { padding: 8px 22px; }
+
+  /* Hero — ensure tagline never clips */
+  .hero-content { max-width: 820px; }
+  .hero-content h1 {
+    font-size: 3.6rem;
+    white-space: normal;
+    overflow-wrap: break-word;
+  }
+}
+
+/* ── Tablet landscape (1024px – 1199px) ────────────────── */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  /* Slightly tighten nav so all items fit without wrapping */
+  .nav-menu a { padding: 7px 10px; font-size: 0.82rem; }
+  .nav-menu .nav-donate { padding: 7px 14px; margin-left: 4px; }
+  .site-logo .logo-tagline { display: none; }   /* hide tagline to free space */
+
+  .hero-content h1 { font-size: clamp(2rem, 3.5vw, 3rem); }
+  .hero-content p  { font-size: 1rem; }
+}
+
+/* ── Tablet portrait (768px – 1023px) ──────────────────── */
+/* Nav already collapses to hamburger at ≤960px via the existing rule */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .section { padding: 60px 0; }
+
+  /* Hero */
+  .hero-content h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
+  .hero-content p  { font-size: 1rem; }
+  .hero-ctas { gap: 12px; }
+
+  /* Orgs: 2×2 grid */
+  .org-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Stats: 2 per row on mid tablet */
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Events */
+  .events-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Footer: 2×2 */
+  .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+
+  /* Page templates */
+  .page-split { gap: 40px; }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ── Mobile (max-width: 767px) ─────────────────────────── */
+@media (max-width: 767px) {
+  /* --- Base typography --- */
+  h1 { font-size: 1.9rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.2rem; }
+
+  /* --- Spacing --- */
+  .section { padding: 48px 0; }
+  .container { padding: 0 16px; }
+  .section-header { margin-bottom: 36px; }
+  .section-header p { font-size: 1rem; }
+
+  /* --- Prevent any element overflowing the viewport --- */
+  img, video, iframe, table { max-width: 100%; }
+
+  /* --- Hero --- */
+  #hero { min-height: 100svh; min-height: 100vh; }
+  .hero-content {
+    padding-top: 100px;
+    padding-bottom: 60px;
+    max-width: 100%;
+  }
+  .hero-content h1 {
+    font-size: clamp(1.6rem, 7vw, 2.2rem);
+    line-height: 1.25;
+    white-space: normal;
+    overflow-wrap: break-word;
+  }
+  .hero-content p {
+    font-size: 0.97rem;
+    margin-bottom: 28px;
+    max-width: 100%;
+  }
+  .hero-badge { font-size: 0.72rem; padding: 6px 14px; }
+  .hero-ctas {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .hero-ctas .btn {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+  .hero-scroll { display: none; }
+
+  /* --- About strip --- */
+  .about-strip-inner { flex-direction: column; gap: 20px; }
+  .about-strip-stats  { justify-content: center; gap: 20px; }
+
+  /* --- Org cards: single column --- */
+  .org-grid { grid-template-columns: 1fr; }
+
+  /* --- Stats: 2 per row --- */
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .stat-item  { padding: 28px 12px; }
+
+  /* --- Events: single column --- */
+  .events-grid { grid-template-columns: 1fr; }
+  .event-card  { flex-direction: column; }
+
+  /* --- Blog: single column (override existing 2-col rule) --- */
+  .blog-grid { grid-template-columns: 1fr !important; }
+
+  /* --- Donate CTA --- */
+  .donate-cta-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .donate-cta-actions .btn {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+
+  /* --- Contact --- */
+  .contact-grid { grid-template-columns: 1fr; gap: 32px; }
+  .contact-form .form-row { grid-template-columns: 1fr; }
+
+  /* --- Footer: single column, centred --- */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .footer-col { text-align: center; }
+  .footer-col h4::after { left: 50%; transform: translateX(-50%); }
+  .footer-links { align-items: center; }
+  .footer-contact-item { justify-content: center; }
+  .footer-logo { justify-content: center; }
+  .social-links { justify-content: center; }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  /* --- Page templates --- */
+  .page-hero { padding: 100px 0 48px; }
+  .page-hero h1 { font-size: clamp(1.5rem, 6vw, 2rem); }
+  .page-hero .breadcrumb { flex-wrap: wrap; justify-content: center; }
+
+  .page-split,
+  .page-split.reverse {
+    grid-template-columns: 1fr;
+    direction: ltr;
+    gap: 24px;
+  }
+  .page-split-img { min-height: 220px; font-size: 3.5rem; }
+
+  .services-grid { grid-template-columns: 1fr; margin-top: 28px; }
+
+  .inline-stats { flex-direction: column; gap: 20px; }
+
+  .team-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+
+  .page-cta-band { padding: 48px 20px; }
+  .page-cta-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .page-cta-actions .btn {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+
+  .callout-box { padding: 18px 20px; }
+
+  /* --- Buttons full-width on mobile (opt-in via .btn-block) --- */
+  .hero-ctas .btn,
+  .donate-cta-actions .btn { display: flex; }
+}
+
+/* ── Small mobile (max-width: 480px) ───────────────────── */
+@media (max-width: 480px) {
+  .hero-content h1 { font-size: 1.55rem; }
+  .hero-content p  { font-size: 0.92rem; }
+
+  /* Stats: keep 2 columns but tighten */
+  .stat-number { font-size: 2.2rem; }
+  .stat-label  { font-size: 0.78rem; }
+
+  /* Team: single column on small phones */
+  .team-grid { grid-template-columns: 1fr; }
+
+  /* Steps / timeline */
+  .step-item { gap: 12px; }
+  .step-num  { width: 36px; height: 36px; font-size: 0.9rem; flex-shrink: 0; }
+
+  /* Survey form */
+  .survey-form { padding: 24px 14px; }
+  .radio-group { flex-direction: column; gap: 10px; }
+
+  /* Footer logo centred */
+  .footer-logo .logo-icon { width: 36px; height: 36px; font-size: 1rem; }
+
+  /* Org-card header padding */
+  .org-card-header { padding: 20px 20px 14px; }
+
+  /* Nav Donate button: full width on tiny screens */
+  .nav-menu .nav-donate,
+  .nav-menu a.nav-donate {
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Grid helpers single col */
+  .grid-2 { grid-template-columns: 1fr; }
 }
