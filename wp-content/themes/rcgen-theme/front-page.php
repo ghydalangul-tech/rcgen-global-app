@@ -45,7 +45,7 @@ $hero_subtext = get_theme_mod(
     </h1>
     <p><?php echo esc_html( $hero_subtext ); ?></p>
     <div class="hero-ctas">
-      <a href="<?php echo esc_url( home_url( '/donate' ) ); ?>" class="btn btn-primary">
+      <a href="<?php echo esc_url( home_url( '/donations' ) ); ?>" class="btn btn-primary">
         &#x2764;&nbsp;<?php esc_html_e( 'Donate Now', 'rcgen-theme' ); ?>
       </a>
       <a href="#organisations" class="btn btn-outline">
@@ -467,7 +467,7 @@ $hero_subtext = get_theme_mod(
     <h2 id="donate-heading"><?php esc_html_e( 'Your Gift Changes Lives in Vrygrond', 'rcgen-theme' ); ?></h2>
     <p><?php esc_html_e( 'Every rand you give goes directly to feeding children, educating learners, and supporting families in need. Give today — and join the mission.', 'rcgen-theme' ); ?></p>
     <div class="donate-cta-actions">
-      <a href="<?php echo esc_url( home_url( '/donate' ) ); ?>" class="btn btn-primary">
+      <a href="<?php echo esc_url( home_url( '/donations' ) ); ?>" class="btn btn-primary">
         &#x2764;&nbsp;<?php esc_html_e( 'Donate Now', 'rcgen-theme' ); ?>
       </a>
       <a href="<?php echo esc_url( home_url( '/volunteer' ) ); ?>" class="btn btn-outline">

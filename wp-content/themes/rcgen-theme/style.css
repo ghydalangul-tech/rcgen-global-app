@@ -1952,9 +1952,9 @@ p:last-child { margin-bottom: 0; }
   img, video, iframe, table { max-width: 100%; }
 
   /* --- Hero --- */
-  #hero { min-height: 100svh; min-height: 100vh; }
+  #hero { min-height: 100svh; min-height: 100vh; align-items: flex-start; }
   .hero-content {
-    padding-top: 100px;
+    padding-top: 80px;
     padding-bottom: 60px;
     max-width: 100%;
   }
@@ -2107,4 +2107,144 @@ p:last-child { margin-bottom: 0; }
 
   /* Grid helpers single col */
   .grid-2 { grid-template-columns: 1fr; }
+}
+
+/* =========================================================
+   MOBILE DISPLAY OVERRIDES
+   Targeted fixes for header, logo, hamburger, hero, padding
+   ========================================================= */
+@media (max-width: 767px) {
+
+  /* ── 1. Header: compact height, solid Royal Blue ── */
+  #site-header {
+    background: #1a56db;
+  }
+
+  .nav-wrapper {
+    height: 60px;
+    max-height: 70px;
+    padding: 0 16px;
+  }
+
+  /* ── 2. Logo: max 80px wide / 50px tall on mobile ── */
+  .site-logo img,
+  .custom-logo,
+  .site-logo a img,
+  .site-logo .wp-custom-logo,
+  header img {
+    max-width: 80px !important;
+    max-height: 50px !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain;
+  }
+
+  /* Fallback text logo: tighten size */
+  .site-logo .logo-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+
+  .site-logo .logo-name    { font-size: 1.05rem; }
+  .site-logo .logo-tagline { display: none; }
+
+  /* WordPress .site-branding wrapper (core/Bizberg) */
+  .site-branding {
+    max-width: 100px !important;
+  }
+  .site-branding img {
+    max-height: 60px !important;
+    height: auto !important;
+    width: auto !important;
+  }
+
+  /* ── 3. Hamburger ☰: white glyph, Royal Blue bg, white border ── */
+  .nav-toggle {
+    background: #1a56db !important;
+    border: 2px solid rgba(255,255,255,0.85) !important;
+    width: 44px;
+    height: 44px;
+  }
+
+  .nav-toggle .toggle-open,
+  .nav-toggle .toggle-close {
+    color: #ffffff !important;
+    font-size: 1.4rem !important;
+  }
+
+  .nav-toggle:hover,
+  .nav-toggle.open {
+    background: #0f2d6b !important;
+    border-color: #f4a623 !important;
+  }
+
+  /* ── 4. Hero: text starts below fixed 60px header ── */
+  #hero {
+    align-items: flex-start;
+    padding-top: 0;
+  }
+
+  .hero-content {
+    padding-top: 80px !important;   /* 60px header + 20px gap */
+    padding-left: 16px;
+    padding-right: 16px;
+    text-align: center;
+    width: 100%;
+  }
+
+  /* h1 exactly 2rem = 32px max */
+  .hero-content h1 {
+    font-size: 2rem !important;
+    line-height: 1.3;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  /* "Communities" last word: gold */
+  .hero-content h1 .text-gold {
+    color: #f4a623 !important;
+  }
+
+  /* Both hero buttons: full width, stacked */
+  .hero-ctas {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    gap: 12px;
+  }
+
+  .hero-ctas .btn {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  /* ── 5. All sections: 15px horizontal padding, no overflow ── */
+  body {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  section {
+    padding-left: 0;
+    padding-right: 0;
+    overflow-x: hidden;
+  }
+
+  .container {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  /* Ensure nothing bleeds out */
+  * {
+    max-width: 100%;
+  }
 }
