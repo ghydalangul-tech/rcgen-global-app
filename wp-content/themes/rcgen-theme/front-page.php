@@ -114,7 +114,7 @@ $hero_subtext = get_theme_mod(
           <h3 id="org-church-title"><?php esc_html_e( 'RCGEN Church', 'rcgen-theme' ); ?></h3>
         </div>
         <div class="org-card-body">
-          <p><?php esc_html_e( 'A Spirit-filled congregation serving Vrygrond since our founding. Weekly services, youth ministry, and spiritual development for all ages.', 'rcgen-theme' ); ?></p>
+          <p><?php esc_html_e( 'A Spirit-filled congregation serving the Vrygrond community. Weekly services, youth ministry, and spiritual development for all ages. Rooted in Deuteronomy 6:6-7.', 'rcgen-theme' ); ?></p>
           <ul class="org-card-features" aria-label="<?php esc_attr_e( 'RCGEN Church programs', 'rcgen-theme' ); ?>">
             <li><?php esc_html_e( 'Sunday service 09:00', 'rcgen-theme' ); ?></li>
             <li><?php esc_html_e( 'Youth &amp; prayer ministry', 'rcgen-theme' ); ?></li>
@@ -134,7 +134,7 @@ $hero_subtext = get_theme_mod(
           <h3 id="org-foundation-title"><?php esc_html_e( 'RCGEN Foundation', 'rcgen-theme' ); ?></h3>
         </div>
         <div class="org-card-body">
-          <p><?php esc_html_e( 'Our feeding scheme provides nutritious meals to vulnerable children and families in Vrygrond, fighting food insecurity one meal at a time.', 'rcgen-theme' ); ?></p>
+          <p><?php esc_html_e( 'Our registered feeding scheme provides nutritious meals to vulnerable children and families in Vrygrond, fighting food insecurity one meal at a time.', 'rcgen-theme' ); ?></p>
           <ul class="org-card-features" aria-label="<?php esc_attr_e( 'RCGEN Foundation programs', 'rcgen-theme' ); ?>">
             <li><?php esc_html_e( 'Weekly hot meals for children', 'rcgen-theme' ); ?></li>
             <li><?php esc_html_e( 'Emergency food parcels', 'rcgen-theme' ); ?></li>
@@ -154,7 +154,7 @@ $hero_subtext = get_theme_mod(
           <h3 id="org-educare-title"><?php esc_html_e( 'RCGEN Educare', 'rcgen-theme' ); ?></h3>
         </div>
         <div class="org-card-body">
-          <p><?php esc_html_e( 'A registered crèche offering quality early childhood development for children aged 0–6. Building foundations for a lifetime of learning.', 'rcgen-theme' ); ?></p>
+          <p><?php esc_html_e( 'A registered crèche offering quality early childhood development for children aged 0–6 years. Building strong foundations for a lifetime of learning.', 'rcgen-theme' ); ?></p>
           <ul class="org-card-features" aria-label="<?php esc_attr_e( 'Educare programs', 'rcgen-theme' ); ?>">
             <li><?php esc_html_e( 'Registered crèche, ages 0–6', 'rcgen-theme' ); ?></li>
             <li><?php esc_html_e( 'CAPS-aligned ECD curriculum', 'rcgen-theme' ); ?></li>
@@ -174,7 +174,7 @@ $hero_subtext = get_theme_mod(
           <h3 id="org-group-title"><?php esc_html_e( 'RCGEN Group', 'rcgen-theme' ); ?></h3>
         </div>
         <div class="org-card-body">
-          <p><?php esc_html_e( 'Our community welfare arm providing humanitarian aid, social support, and upliftment programmes for vulnerable individuals and families.', 'rcgen-theme' ); ?></p>
+          <p><?php esc_html_e( 'Our registered community welfare and humanitarian aid organisation. Providing practical support, upliftment programmes, and social welfare services to vulnerable individuals and families in Vrygrond and surrounding areas.', 'rcgen-theme' ); ?></p>
           <ul class="org-card-features" aria-label="<?php esc_attr_e( 'RCGEN Group programs', 'rcgen-theme' ); ?>">
             <li><?php esc_html_e( 'Humanitarian aid distribution', 'rcgen-theme' ); ?></li>
             <li><?php esc_html_e( 'Youth &amp; skills development', 'rcgen-theme' ); ?></li>
