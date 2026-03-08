@@ -1952,15 +1952,14 @@ p:last-child { margin-bottom: 0; }
   img, video, iframe, table { max-width: 100%; }
 
   /* --- Hero --- */
-  #hero { min-height: 100svh; min-height: 100vh; align-items: flex-start; }
+  #hero { min-height: auto; align-items: flex-start; }
   .hero-content {
-    padding-top: 80px;
-    padding-bottom: 60px;
+    padding: 100px 20px 40px;
     max-width: 100%;
   }
   .hero-content h1 {
-    font-size: clamp(1.4rem, 7vw, 2rem);   /* max 2rem = 32px on mobile */
-    line-height: 1.25;
+    font-size: clamp(1.3rem, 5vw, 2rem);   /* fluid 20.8px–32px */
+    line-height: 1.3;
     white-space: normal;
     overflow-wrap: break-word;
   }
@@ -2073,7 +2072,7 @@ p:last-child { margin-bottom: 0; }
 
 /* ── Small mobile (max-width: 480px) ───────────────────── */
 @media (max-width: 480px) {
-  .hero-content h1 { font-size: clamp(1.3rem, 6vw, 1.8rem); }  /* ≤28.8px on small phones */
+  .hero-content h1 { font-size: 1.4rem !important; line-height: 1.3 !important; }  /* 22.4px on small phones */
   .hero-content p  { font-size: 0.92rem; }
 
   /* Stats: keep 2 columns but tighten */
@@ -2126,14 +2125,14 @@ p:last-child { margin-bottom: 0; }
     padding: 0 16px;
   }
 
-  /* ── 2. Logo: max 80px wide / 50px tall on mobile ── */
+  /* ── 2. Logo: max 120px wide / 70px tall on mobile ── */
   .site-logo img,
   .custom-logo,
   .site-logo a img,
   .site-logo .wp-custom-logo,
   header img {
-    max-width: 80px !important;
-    max-height: 50px !important;
+    max-width: 120px !important;
+    max-height: 70px !important;
     width: auto !important;
     height: auto !important;
     object-fit: contain;
@@ -2182,21 +2181,19 @@ p:last-child { margin-bottom: 0; }
   /* ── 4. Hero: text starts below fixed 60px header ── */
   #hero {
     align-items: flex-start;
-    padding-top: 0;
+    min-height: auto !important;
   }
 
   .hero-content {
-    padding-top: 80px !important;   /* 60px header + 20px gap */
-    padding-left: 16px;
-    padding-right: 16px;
+    padding: 100px 20px 40px 20px !important;
     text-align: center;
     width: 100%;
   }
 
-  /* h1 exactly 2rem = 32px max */
+  /* h1: 1.6rem (25.6px) on mobile, overrides all earlier rules */
   .hero-content h1 {
-    font-size: 2rem !important;
-    line-height: 1.3;
+    font-size: 1.6rem !important;
+    line-height: 1.3 !important;
     overflow-wrap: break-word;
     word-break: break-word;
   }
@@ -2246,5 +2243,13 @@ p:last-child { margin-bottom: 0; }
   /* Ensure nothing bleeds out */
   * {
     max-width: 100%;
+  }
+}
+
+/* ── Final 480px override (must come last to beat the 767px block above) ── */
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 1.4rem !important;
+    line-height: 1.3 !important;
   }
 }
