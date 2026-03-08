@@ -52,9 +52,8 @@
 
     <!-- Mobile Toggle -->
     <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="<?php esc_attr_e( 'Toggle menu', 'rcgen-theme' ); ?>">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span class="toggle-open"  aria-hidden="true">&#9776;</span>
+      <span class="toggle-close" aria-hidden="true">&#x2715;</span>
     </button>
 
   </div>
