@@ -17,6 +17,9 @@ get_header();
       &#x1F37D;&#xFE0F; <?php esc_html_e( 'Feeding Scheme &amp; Nutrition', 'rcgen-theme' ); ?>
     </span>
     <h1><?php esc_html_e( 'RCGEN Foundation', 'rcgen-theme' ); ?></h1>
+    <p style="color:rgba(255,255,255,0.85);font-size:1rem;margin-top:8px;font-style:italic;">
+      <?php esc_html_e( 'Fighting Hunger. Restoring Dignity.', 'rcgen-theme' ); ?>
+    </p>
     <div class="breadcrumb">
       <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'rcgen-theme' ); ?></a>
       <span><?php esc_html_e( 'RCGEN Foundation', 'rcgen-theme' ); ?></span>
@@ -55,6 +58,34 @@ get_header();
         </div>
       </div>
       <div class="page-split-img" aria-hidden="true" style="background:linear-gradient(135deg,#14532d,#16a34a);">&#x1F37D;&#xFE0F;</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ THE NEED ══════════════════════════════════════════════════════════════ -->
+<section class="page-section page-section--blue">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-tag"><?php esc_html_e( 'The Challenge', 'rcgen-theme' ); ?></span>
+      <h2><?php esc_html_e( 'The Need in Vrygrond', 'rcgen-theme' ); ?></h2>
+    </div>
+    <div class="page-split fade-in">
+      <div>
+        <p><?php esc_html_e( 'Vrygrond is one of the most economically marginalised communities in the Western Cape. High unemployment, overcrowding, and limited access to social services mean that many families — including young children — regularly face food insecurity.', 'rcgen-theme' ); ?></p>
+        <p><?php esc_html_e( 'Children who go hungry cannot learn effectively. Parents who cannot feed their families cannot work effectively. Food insecurity is not just a physical problem — it breaks the cycle of hope and opportunity for an entire community.', 'rcgen-theme' ); ?></p>
+        <p><?php esc_html_e( 'RCGEN Foundation was established specifically to address this gap. We do not wait for government programmes. We show up — every week, in Vrygrond — because our neighbours need us to.', 'rcgen-theme' ); ?></p>
+      </div>
+      <div class="page-split-img" aria-hidden="true" style="background:linear-gradient(135deg,#14532d,#16a34a);">&#x1F371;</div>
+    </div>
+    <div class="grid-2 fade-in" style="margin-top:32px;gap:24px;">
+      <div class="callout-box" style="text-align:center;background:#fff;">
+        <p style="font-size:2rem;font-weight:800;color:var(--color-foundation);margin-bottom:4px;">200+</p>
+        <p style="font-size:0.9rem;color:var(--color-navy-dark);"><?php esc_html_e( 'Children fed weekly through our programme', 'rcgen-theme' ); ?></p>
+      </div>
+      <div class="callout-box" style="text-align:center;background:#fff;">
+        <p style="font-size:2rem;font-weight:800;color:var(--color-foundation);margin-bottom:4px;">52</p>
+        <p style="font-size:0.9rem;color:var(--color-navy-dark);"><?php esc_html_e( 'Weeks a year — we never stop', 'rcgen-theme' ); ?></p>
+      </div>
     </div>
   </div>
 </section>
@@ -178,7 +209,7 @@ get_header();
     <h2><?php esc_html_e( 'Together, We Can End Hunger in Vrygrond', 'rcgen-theme' ); ?></h2>
     <p><?php esc_html_e( 'One donation. One volunteer. One meal. It all adds up to real change for real families in Vrygrond, Cape Town.', 'rcgen-theme' ); ?></p>
     <div class="page-cta-actions">
-      <a href="<?php echo esc_url( home_url( '/donate' ) ); ?>" class="btn btn-primary">
+      <a href="<?php echo esc_url( home_url( '/donations' ) ); ?>" class="btn btn-primary">
         &#x1F37D; <?php esc_html_e( 'Donate Now', 'rcgen-theme' ); ?>
       </a>
       <a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="btn btn-outline">

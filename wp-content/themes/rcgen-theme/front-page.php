@@ -68,7 +68,7 @@ $hero_subtext = get_theme_mod(
     <div class="about-strip-inner">
       <div class="about-strip-text">
         <h3><?php esc_html_e( 'A Community Rooted in Faith &amp; Service', 'rcgen-theme' ); ?></h3>
-        <p><?php esc_html_e( 'RCGEN is an umbrella nonprofit bringing together four distinct programs under one God-led vision — transforming lives in Vrygrond and beyond.', 'rcgen-theme' ); ?></p>
+        <p><?php esc_html_e( 'RCGEN is an umbrella nonprofit bringing together four distinct programs under one God-led vision — transforming lives in Vrygrond and beyond. Founded on Deuteronomy 6:6-7, we believe every child deserves education, every family deserves dignity, and every community deserves hope.', 'rcgen-theme' ); ?></p>
       </div>
       <div class="about-strip-stats" role="list">
         <div class="strip-stat" role="listitem">
@@ -80,7 +80,7 @@ $hero_subtext = get_theme_mod(
           <span class="lbl"><?php esc_html_e( 'Programs', 'rcgen-theme' ); ?></span>
         </div>
         <div class="strip-stat" role="listitem">
-          <span class="num" aria-label="10 plus years">10+</span>
+          <span class="num" aria-label="15 plus years">15+</span>
           <span class="lbl"><?php esc_html_e( 'Years Active', 'rcgen-theme' ); ?></span>
         </div>
         <div class="strip-stat" role="listitem">
@@ -106,41 +106,41 @@ $hero_subtext = get_theme_mod(
 
     <div class="org-grid">
 
-      <!-- 1. RCGEN (Church) -->
+      <!-- 1. RCGEN Church -->
       <article class="org-card org-card--church fade-in" aria-labelledby="org-church-title">
         <div class="org-card-header">
-          <span class="org-icon" aria-hidden="true">&#x1F54A;&#xFE0F;</span>
+          <span class="org-icon" aria-hidden="true">&#x26EA;</span>
           <span class="org-tag"><?php esc_html_e( 'Church &amp; Faith Outreach', 'rcgen-theme' ); ?></span>
-          <h3 id="org-church-title"><?php esc_html_e( 'RCGEN', 'rcgen-theme' ); ?></h3>
+          <h3 id="org-church-title"><?php esc_html_e( 'RCGEN Church', 'rcgen-theme' ); ?></h3>
         </div>
         <div class="org-card-body">
-          <p><?php esc_html_e( 'A spirit-led church serving the Vrygrond community through worship, pastoral care, and outreach.', 'rcgen-theme' ); ?></p>
+          <p><?php esc_html_e( 'A Spirit-filled congregation serving Vrygrond since our founding. Weekly services, youth ministry, and spiritual development for all ages.', 'rcgen-theme' ); ?></p>
           <ul class="org-card-features" aria-label="<?php esc_attr_e( 'RCGEN Church programs', 'rcgen-theme' ); ?>">
-            <li><?php esc_html_e( 'Weekly worship services', 'rcgen-theme' ); ?></li>
-            <li><?php esc_html_e( 'Pastoral care &amp; discipleship', 'rcgen-theme' ); ?></li>
-            <li><?php esc_html_e( 'Youth &amp; family outreach', 'rcgen-theme' ); ?></li>
+            <li><?php esc_html_e( 'Sunday service 09:00', 'rcgen-theme' ); ?></li>
+            <li><?php esc_html_e( 'Youth &amp; prayer ministry', 'rcgen-theme' ); ?></li>
+            <li><?php esc_html_e( 'Community outreach &amp; care', 'rcgen-theme' ); ?></li>
           </ul>
-          <a href="<?php echo esc_url( home_url( '/organisations/rcgen' ) ); ?>" class="org-link">
+          <a href="<?php echo esc_url( home_url( '/rcgen' ) ); ?>" class="org-link">
             <?php esc_html_e( 'Learn more', 'rcgen-theme' ); ?>
           </a>
         </div>
       </article>
 
-      <!-- 2. RCGEN Group -->
-      <article class="org-card org-card--group fade-in fade-in-delay-1" aria-labelledby="org-group-title">
+      <!-- 2. RCGEN Foundation -->
+      <article class="org-card org-card--foundation fade-in fade-in-delay-1" aria-labelledby="org-foundation-title">
         <div class="org-card-header">
-          <span class="org-icon" aria-hidden="true">&#x1F91D;</span>
-          <span class="org-tag"><?php esc_html_e( 'Community Welfare &amp; Humanitarian Aid', 'rcgen-theme' ); ?></span>
-          <h3 id="org-group-title"><?php esc_html_e( 'RCGEN Group', 'rcgen-theme' ); ?></h3>
+          <span class="org-icon" aria-hidden="true">&#x1F35E;</span>
+          <span class="org-tag"><?php esc_html_e( 'Feeding Scheme &amp; Nutrition', 'rcgen-theme' ); ?></span>
+          <h3 id="org-foundation-title"><?php esc_html_e( 'RCGEN Foundation', 'rcgen-theme' ); ?></h3>
         </div>
         <div class="org-card-body">
-          <p><?php esc_html_e( 'Providing humanitarian aid, elderly support, crisis intervention, and community upliftment across Vrygrond and surrounds.', 'rcgen-theme' ); ?></p>
-          <ul class="org-card-features" aria-label="<?php esc_attr_e( 'RCGEN Group programs', 'rcgen-theme' ); ?>">
-            <li><?php esc_html_e( 'Emergency food &amp; clothing aid', 'rcgen-theme' ); ?></li>
-            <li><?php esc_html_e( 'Elderly care &amp; home visits', 'rcgen-theme' ); ?></li>
-            <li><?php esc_html_e( 'Crisis counselling &amp; referrals', 'rcgen-theme' ); ?></li>
+          <p><?php esc_html_e( 'Our feeding scheme provides nutritious meals to vulnerable children and families in Vrygrond, fighting food insecurity one meal at a time.', 'rcgen-theme' ); ?></p>
+          <ul class="org-card-features" aria-label="<?php esc_attr_e( 'RCGEN Foundation programs', 'rcgen-theme' ); ?>">
+            <li><?php esc_html_e( 'Weekly hot meals for children', 'rcgen-theme' ); ?></li>
+            <li><?php esc_html_e( 'Emergency food parcels', 'rcgen-theme' ); ?></li>
+            <li><?php esc_html_e( 'Nutritional education &amp; support', 'rcgen-theme' ); ?></li>
           </ul>
-          <a href="<?php echo esc_url( home_url( '/organisations/rcgen-group' ) ); ?>" class="org-link">
+          <a href="<?php echo esc_url( home_url( '/rcgen-foundation' ) ); ?>" class="org-link">
             <?php esc_html_e( 'Learn more', 'rcgen-theme' ); ?>
           </a>
         </div>
@@ -149,38 +149,38 @@ $hero_subtext = get_theme_mod(
       <!-- 3. RCGEN Educare -->
       <article class="org-card org-card--educare fade-in fade-in-delay-2" aria-labelledby="org-educare-title">
         <div class="org-card-header">
-          <span class="org-icon" aria-hidden="true">&#x1F393;</span>
+          <span class="org-icon" aria-hidden="true">&#x1F4DA;</span>
           <span class="org-tag"><?php esc_html_e( 'Early Childhood Education', 'rcgen-theme' ); ?></span>
           <h3 id="org-educare-title"><?php esc_html_e( 'RCGEN Educare', 'rcgen-theme' ); ?></h3>
         </div>
         <div class="org-card-body">
-          <p><?php esc_html_e( 'Quality crèche and ECD centre preparing children ages 0–6 for school and life. We believe every child deserves a strong foundation built on love and learning.', 'rcgen-theme' ); ?></p>
+          <p><?php esc_html_e( 'A registered crèche offering quality early childhood development for children aged 0–6. Building foundations for a lifetime of learning.', 'rcgen-theme' ); ?></p>
           <ul class="org-card-features" aria-label="<?php esc_attr_e( 'Educare programs', 'rcgen-theme' ); ?>">
-            <li><?php esc_html_e( 'Registered crèche for ages 0–6', 'rcgen-theme' ); ?></li>
+            <li><?php esc_html_e( 'Registered crèche, ages 0–6', 'rcgen-theme' ); ?></li>
             <li><?php esc_html_e( 'CAPS-aligned ECD curriculum', 'rcgen-theme' ); ?></li>
-            <li><?php esc_html_e( 'School-readiness &amp; parent support', 'rcgen-theme' ); ?></li>
+            <li><?php esc_html_e( 'Nutritious meals &amp; school readiness', 'rcgen-theme' ); ?></li>
           </ul>
-          <a href="<?php echo esc_url( home_url( '/organisations/rcgen-educare' ) ); ?>" class="org-link">
+          <a href="<?php echo esc_url( home_url( '/rcgen-educare' ) ); ?>" class="org-link">
             <?php esc_html_e( 'Learn more', 'rcgen-theme' ); ?>
           </a>
         </div>
       </article>
 
-      <!-- 4. RCGEN Foundation -->
-      <article class="org-card org-card--foundation fade-in fade-in-delay-3" aria-labelledby="org-foundation-title">
+      <!-- 4. RCGEN Group -->
+      <article class="org-card org-card--group fade-in fade-in-delay-3" aria-labelledby="org-group-title">
         <div class="org-card-header">
-          <span class="org-icon" aria-hidden="true">&#x1F37D;&#xFE0F;</span>
-          <span class="org-tag"><?php esc_html_e( 'Feeding Scheme &amp; Nutrition', 'rcgen-theme' ); ?></span>
-          <h3 id="org-foundation-title"><?php esc_html_e( 'RCGEN Foundation', 'rcgen-theme' ); ?></h3>
+          <span class="org-icon" aria-hidden="true">&#x1F91D;</span>
+          <span class="org-tag"><?php esc_html_e( 'Community Welfare &amp; Humanitarian Aid', 'rcgen-theme' ); ?></span>
+          <h3 id="org-group-title"><?php esc_html_e( 'RCGEN Group', 'rcgen-theme' ); ?></h3>
         </div>
         <div class="org-card-body">
-          <p><?php esc_html_e( 'Providing nutritious meals and food support to children and families in Vrygrond weekly.', 'rcgen-theme' ); ?></p>
-          <ul class="org-card-features" aria-label="<?php esc_attr_e( 'RCGEN Foundation programs', 'rcgen-theme' ); ?>">
-            <li><?php esc_html_e( 'Weekly hot meals distribution', 'rcgen-theme' ); ?></li>
-            <li><?php esc_html_e( 'Nutrition education for families', 'rcgen-theme' ); ?></li>
-            <li><?php esc_html_e( 'Food parcel drives &amp; donations', 'rcgen-theme' ); ?></li>
+          <p><?php esc_html_e( 'Our community welfare arm providing humanitarian aid, social support, and upliftment programmes for vulnerable individuals and families.', 'rcgen-theme' ); ?></p>
+          <ul class="org-card-features" aria-label="<?php esc_attr_e( 'RCGEN Group programs', 'rcgen-theme' ); ?>">
+            <li><?php esc_html_e( 'Humanitarian aid distribution', 'rcgen-theme' ); ?></li>
+            <li><?php esc_html_e( 'Youth &amp; skills development', 'rcgen-theme' ); ?></li>
+            <li><?php esc_html_e( 'Crisis intervention &amp; referrals', 'rcgen-theme' ); ?></li>
           </ul>
-          <a href="<?php echo esc_url( home_url( '/organisations/rcgen-foundation' ) ); ?>" class="org-link">
+          <a href="<?php echo esc_url( home_url( '/rcgen-group' ) ); ?>" class="org-link">
             <?php esc_html_e( 'Learn more', 'rcgen-theme' ); ?>
           </a>
         </div>
@@ -207,27 +207,27 @@ $hero_subtext = get_theme_mod(
     <div class="stats-grid" role="list">
 
       <div class="stat-card fade-in" role="listitem">
-        <span class="stat-icon" aria-hidden="true">&#x1F9D2;</span>
-        <div class="stat-number" data-target="500" data-suffix="+">0</div>
-        <div class="stat-label"><?php esc_html_e( 'Children Served', 'rcgen-theme' ); ?></div>
+        <span class="stat-icon" aria-hidden="true">&#x1F35E;</span>
+        <div class="stat-number" data-target="200" data-suffix="+">0</div>
+        <div class="stat-label"><?php esc_html_e( 'Children Fed Weekly', 'rcgen-theme' ); ?></div>
       </div>
 
       <div class="stat-card fade-in fade-in-delay-1" role="listitem">
-        <span class="stat-icon" aria-hidden="true">&#x1F4CA;</span>
-        <div class="stat-number" data-target="4" data-suffix="">0</div>
-        <div class="stat-label"><?php esc_html_e( 'Community Programs', 'rcgen-theme' ); ?></div>
+        <span class="stat-icon" aria-hidden="true">&#x1F4DA;</span>
+        <div class="stat-number" data-target="45" data-suffix="+">0</div>
+        <div class="stat-label"><?php esc_html_e( 'Educare Learners', 'rcgen-theme' ); ?></div>
       </div>
 
       <div class="stat-card fade-in fade-in-delay-2" role="listitem">
-        <span class="stat-icon" aria-hidden="true">&#x1F4C5;</span>
-        <div class="stat-number" data-target="10" data-suffix="+">0</div>
-        <div class="stat-label"><?php esc_html_e( 'Years of Impact', 'rcgen-theme' ); ?></div>
+        <span class="stat-icon" aria-hidden="true">&#x1F91D;</span>
+        <div class="stat-number" data-target="500" data-suffix="+">0</div>
+        <div class="stat-label"><?php esc_html_e( 'Community Members Served', 'rcgen-theme' ); ?></div>
       </div>
 
       <div class="stat-card fade-in fade-in-delay-3" role="listitem">
-        <span class="stat-icon" aria-hidden="true">&#x1F35C;</span>
-        <div class="stat-number" data-target="100" data-suffix="s">0</div>
-        <div class="stat-label"><?php esc_html_e( 'Meals Weekly', 'rcgen-theme' ); ?></div>
+        <span class="stat-icon" aria-hidden="true">&#x1F4C5;</span>
+        <div class="stat-number" data-target="15" data-suffix="+">0</div>
+        <div class="stat-label"><?php esc_html_e( 'Years of Service', 'rcgen-theme' ); ?></div>
       </div>
 
     </div><!-- .stats-grid -->
@@ -458,6 +458,51 @@ $hero_subtext = get_theme_mod(
   </div><!-- .container -->
 </section>
 <!-- ═══════════════════════ END BLOG ══════════════════════════════════════════ -->
+
+
+<!-- ═══════════════════════ HOW TO HELP ════════════════════════════════════════ -->
+<section id="how-to-help" class="section" aria-labelledby="help-heading">
+  <div class="container">
+
+    <div class="section-header fade-in">
+      <span class="section-tag"><?php esc_html_e( 'Get Involved', 'rcgen-theme' ); ?></span>
+      <h2 id="help-heading"><?php esc_html_e( 'How to Help', 'rcgen-theme' ); ?></h2>
+      <p><?php esc_html_e( 'There are many ways to partner with RCGEN and make a lasting difference in the Vrygrond community.', 'rcgen-theme' ); ?></p>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service-card fade-in" style="border-top:4px solid var(--color-gold);">
+        <span class="service-icon" aria-hidden="true">&#x2764;&#xFE0F;</span>
+        <h4><?php esc_html_e( 'Donate', 'rcgen-theme' ); ?></h4>
+        <p><?php esc_html_e( 'Support our work financially. Every rand goes directly to feeding children, educating learners, and uplifting families in Vrygrond.', 'rcgen-theme' ); ?></p>
+        <a href="<?php echo esc_url( home_url( '/donations' ) ); ?>" class="btn btn-primary" style="margin-top:auto;">
+          <?php esc_html_e( 'Give Now', 'rcgen-theme' ); ?>
+        </a>
+      </div>
+
+      <div class="service-card fade-in fade-in-delay-1" style="border-top:4px solid var(--color-navy);">
+        <span class="service-icon" aria-hidden="true">&#x1F64C;</span>
+        <h4><?php esc_html_e( 'Volunteer', 'rcgen-theme' ); ?></h4>
+        <p><?php esc_html_e( 'Give your time and skills to serve. Help at our feeding scheme, creche, welfare programmes, or community outreach days.', 'rcgen-theme' ); ?></p>
+        <a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="btn btn-navy" style="margin-top:auto;">
+          <?php esc_html_e( 'Get Involved', 'rcgen-theme' ); ?>
+        </a>
+      </div>
+
+      <div class="service-card fade-in fade-in-delay-2" style="border-top:4px solid #16a34a;">
+        <span class="service-icon" aria-hidden="true">&#x1F91D;</span>
+        <h4><?php esc_html_e( 'Partner', 'rcgen-theme' ); ?></h4>
+        <p><?php esc_html_e( 'Collaborate with us as an organisation, church, or business. Together we can multiply our impact in Vrygrond and beyond.', 'rcgen-theme' ); ?></p>
+        <a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="btn btn-outline" style="margin-top:auto;">
+          <?php esc_html_e( 'Contact Us', 'rcgen-theme' ); ?>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- ═══════════════════════ END HOW TO HELP ════════════════════════════════════ -->
 
 
 <!-- ═══════════════════════ DONATE CTA BANNER ═════════════════════════════════ -->

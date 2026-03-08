@@ -18,6 +18,9 @@ get_header();
       &#x1F54A;&#xFE0F; <?php esc_html_e( 'Church &amp; Faith Outreach', 'rcgen-theme' ); ?>
     </span>
     <h1><?php esc_html_e( 'Welcome to RCGEN Church', 'rcgen-theme' ); ?></h1>
+    <p style="color:rgba(255,255,255,0.85);font-size:1rem;margin-top:8px;font-style:italic;">
+      <?php esc_html_e( 'Revival Christian Group Children of All Nations — Deuteronomy 6:6-7', 'rcgen-theme' ); ?>
+    </p>
     <div class="breadcrumb">
       <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'rcgen-theme' ); ?></a>
       <span><?php esc_html_e( 'RCGEN', 'rcgen-theme' ); ?></span>
@@ -37,7 +40,7 @@ get_header();
 
         <div class="inline-stats">
           <div class="inline-stat">
-            <span class="num">10+</span>
+            <span class="num">15+</span>
             <span class="lbl"><?php esc_html_e( 'Years Active', 'rcgen-theme' ); ?></span>
           </div>
           <div class="inline-stat">
@@ -131,6 +134,87 @@ get_header();
   </div>
 </section>
 
+<!-- ═══ SERVICE TIMES ═══════════════════════════════════════════════════════ -->
+<section class="page-section page-section--blue">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-tag"><?php esc_html_e( 'Join Us', 'rcgen-theme' ); ?></span>
+      <h2><?php esc_html_e( 'Service Times', 'rcgen-theme' ); ?></h2>
+      <p><?php esc_html_e( 'All services are held in Vrygrond, Cape Town. Everyone is welcome — come as you are.', 'rcgen-theme' ); ?></p>
+    </div>
+    <div class="steps-list fade-in" style="max-width:720px;margin:0 auto;">
+      <div class="step-item">
+        <div class="step-num" style="background:var(--color-church);min-width:56px;font-size:1rem;">SUN</div>
+        <div class="step-body">
+          <h4><?php esc_html_e( 'Sunday Worship Service', 'rcgen-theme' ); ?></h4>
+          <p><?php esc_html_e( '09:00 AM — Spirit-filled worship, preaching, and community. Bring the whole family.', 'rcgen-theme' ); ?></p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num" style="background:var(--color-church);min-width:56px;font-size:1rem;">WED</div>
+        <div class="step-body">
+          <h4><?php esc_html_e( 'Wednesday Prayer Meeting', 'rcgen-theme' ); ?></h4>
+          <p><?php esc_html_e( '18:00 — Midweek intercession, community prayer, and seeking God together.', 'rcgen-theme' ); ?></p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num" style="background:var(--color-church);min-width:56px;font-size:1rem;">FRI</div>
+        <div class="step-body">
+          <h4><?php esc_html_e( 'Friday Youth Service', 'rcgen-theme' ); ?></h4>
+          <p><?php esc_html_e( '17:00 — Engaging ministry for teenagers and young adults. Bible study, mentorship, and community.', 'rcgen-theme' ); ?></p>
+        </div>
+      </div>
+    </div>
+    <div class="callout-box fade-in" style="max-width:600px;margin:32px auto 0;text-align:center;">
+      <p>&#x1F4CD; <strong><?php esc_html_e( 'Location:', 'rcgen-theme' ); ?></strong> <?php esc_html_e( 'Vrygrond, Cape Town, South Africa', 'rcgen-theme' ); ?></p>
+      <p><?php esc_html_e( 'First time visiting? We\'d love to meet you. Contact us at', 'rcgen-theme' ); ?> <a href="mailto:info@rcgen.org.za">info@rcgen.org.za</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MINISTRIES ═══════════════════════════════════════════════════════════ -->
+<section class="page-section page-section--white">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-tag"><?php esc_html_e( 'Our Ministries', 'rcgen-theme' ); ?></span>
+      <h2><?php esc_html_e( 'Serving Together in Vrygrond', 'rcgen-theme' ); ?></h2>
+      <p><?php esc_html_e( 'RCGEN Church operates several ministries to serve the whole person — spirit, soul, and body.', 'rcgen-theme' ); ?></p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card service-card--church fade-in">
+        <span class="service-icon">&#x1F64F;</span>
+        <h4><?php esc_html_e( 'Prayer Ministry', 'rcgen-theme' ); ?></h4>
+        <p><?php esc_html_e( 'Intercession and prayer covering for the church, Vrygrond community, and the nation.', 'rcgen-theme' ); ?></p>
+      </div>
+      <div class="service-card service-card--church fade-in fade-in-delay-1">
+        <span class="service-icon">&#x1F31F;</span>
+        <h4><?php esc_html_e( 'Youth Ministry', 'rcgen-theme' ); ?></h4>
+        <p><?php esc_html_e( 'Discipling the next generation through faith, mentorship, sport, and relevant Bible teaching.', 'rcgen-theme' ); ?></p>
+      </div>
+      <div class="service-card service-card--church fade-in fade-in-delay-2">
+        <span class="service-icon">&#x1F46A;</span>
+        <h4><?php esc_html_e( 'Family &amp; Pastoral Care', 'rcgen-theme' ); ?></h4>
+        <p><?php esc_html_e( 'Counselling, home visits, and pastoral support for families facing difficulty or crisis.', 'rcgen-theme' ); ?></p>
+      </div>
+      <div class="service-card service-card--church fade-in fade-in-delay-3">
+        <span class="service-icon">&#x1F91D;</span>
+        <h4><?php esc_html_e( 'Community Outreach', 'rcgen-theme' ); ?></h4>
+        <p><?php esc_html_e( 'Evangelism, prayer walks, and practical service in the streets and homes of Vrygrond.', 'rcgen-theme' ); ?></p>
+      </div>
+      <div class="service-card service-card--church fade-in">
+        <span class="service-icon">&#x1F4D6;</span>
+        <h4><?php esc_html_e( 'Bible Study Groups', 'rcgen-theme' ); ?></h4>
+        <p><?php esc_html_e( 'Small group discipleship and Bible study for adults — growing deeper in the Word together.', 'rcgen-theme' ); ?></p>
+      </div>
+      <div class="service-card service-card--church fade-in fade-in-delay-1">
+        <span class="service-icon">&#x1F935;</span>
+        <h4><?php esc_html_e( 'Men\'s &amp; Women\'s Ministry', 'rcgen-theme' ); ?></h4>
+        <p><?php esc_html_e( 'Dedicated fellowship and growth groups for men and women, building strength and community.', 'rcgen-theme' ); ?></p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ═══ LOCATION ════════════════════════════════════════════════════════════ -->
 <section class="page-section page-section--navy">
   <div class="container">
@@ -178,7 +262,7 @@ get_header();
       <a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="btn btn-primary">
         &#x2709; <?php esc_html_e( 'Get In Touch', 'rcgen-theme' ); ?>
       </a>
-      <a href="<?php echo esc_url( home_url( '/donate' ) ); ?>" class="btn btn-outline">
+      <a href="<?php echo esc_url( home_url( '/donations' ) ); ?>" class="btn btn-outline">
         &#x2764; <?php esc_html_e( 'Support RCGEN', 'rcgen-theme' ); ?>
       </a>
     </div>

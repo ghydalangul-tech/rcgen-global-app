@@ -16,6 +16,9 @@ get_header();
       &#x1F393; <?php esc_html_e( 'Early Childhood Education', 'rcgen-theme' ); ?>
     </span>
     <h1><?php esc_html_e( 'RCGEN Educare', 'rcgen-theme' ); ?></h1>
+    <p style="color:rgba(255,255,255,0.85);font-size:1rem;margin-top:8px;font-style:italic;">
+      <?php esc_html_e( 'Building Bright Futures from the Very Beginning', 'rcgen-theme' ); ?>
+    </p>
     <div class="breadcrumb">
       <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'rcgen-theme' ); ?></a>
       <span><?php esc_html_e( 'RCGEN Educare', 'rcgen-theme' ); ?></span>
@@ -137,6 +140,78 @@ get_header();
     <div class="callout-box" style="background:#e0f2fe;border-left-color:var(--color-educare);margin-top:40px;">
       <p><strong><?php esc_html_e( 'Enrolment is open.', 'rcgen-theme' ); ?></strong>
       <?php esc_html_e( ' We welcome children from the Vrygrond community and surrounding areas. Contact us to arrange a visit and see our facilities.', 'rcgen-theme' ); ?></p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHY ECD MATTERS ════════════════════════════════════════════════════════ -->
+<section class="page-section page-section--blue">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-tag"><?php esc_html_e( 'The Research', 'rcgen-theme' ); ?></span>
+      <h2><?php esc_html_e( 'Why Early Childhood Development Matters', 'rcgen-theme' ); ?></h2>
+    </div>
+    <div class="page-split fade-in">
+      <div>
+        <p><?php esc_html_e( 'Research shows that 90% of brain development happens before the age of 5. The experiences, relationships, and environments a child encounters in their first years have a profound, lasting impact on their cognitive ability, emotional wellbeing, and future success.', 'rcgen-theme' ); ?></p>
+        <p><?php esc_html_e( 'In communities like Vrygrond where poverty and instability are common, quality early childhood education is not a luxury — it is one of the most powerful interventions available to break the cycle of poverty and give children a fighting chance.', 'rcgen-theme' ); ?></p>
+        <p><?php esc_html_e( 'Every learner who passes through RCGEN Educare is better equipped to succeed in primary school, build healthy relationships, and contribute positively to their community. Investing in the early years is investing in the future of Vrygrond.', 'rcgen-theme' ); ?></p>
+      </div>
+      <div>
+        <div class="callout-box" style="background:#fff;border-left-color:var(--color-educare);text-align:center;">
+          <p style="font-size:3rem;font-weight:800;color:var(--color-educare);margin-bottom:8px;">90%</p>
+          <p><strong><?php esc_html_e( 'of brain development happens before age 5', 'rcgen-theme' ); ?></strong></p>
+        </div>
+        <div class="callout-box" style="background:#fff;border-left-color:var(--color-gold);text-align:center;margin-top:20px;">
+          <p style="font-size:3rem;font-weight:800;color:var(--color-gold-dark);margin-bottom:8px;">45+</p>
+          <p><strong><?php esc_html_e( 'learners currently enrolled at RCGEN Educare', 'rcgen-theme' ); ?></strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ REGISTRATION ═════════════════════════════════════════════════════════ -->
+<section class="page-section page-section--white">
+  <div class="container" style="max-width:780px;">
+    <div class="section-header fade-in">
+      <span class="section-tag"><?php esc_html_e( 'Enrol Your Child', 'rcgen-theme' ); ?></span>
+      <h2><?php esc_html_e( 'Registration Information', 'rcgen-theme' ); ?></h2>
+    </div>
+    <div class="steps-list fade-in">
+      <div class="step-item">
+        <div class="step-num" style="background:var(--color-educare);">1</div>
+        <div class="step-body">
+          <h4><?php esc_html_e( 'Open Throughout the Year', 'rcgen-theme' ); ?></h4>
+          <p><?php esc_html_e( 'RCGEN Educare accepts registrations throughout the year, subject to availability. We serve children from Vrygrond and surrounding communities in Cape Town.', 'rcgen-theme' ); ?></p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num" style="background:var(--color-educare);">2</div>
+        <div class="step-body">
+          <h4><?php esc_html_e( 'Contact Us to Enquire', 'rcgen-theme' ); ?></h4>
+          <p><?php esc_html_e( 'Reach out via email or visit us in Vrygrond. Our staff will guide you through the registration process and answer any questions.', 'rcgen-theme' ); ?>
+          <br><a href="mailto:info@rcgen.org.za" style="color:var(--color-educare);font-weight:600;">info@rcgen.org.za</a></p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num" style="background:var(--color-educare);">3</div>
+        <div class="step-body">
+          <h4><?php esc_html_e( 'Visit Our Centre', 'rcgen-theme' ); ?></h4>
+          <p><?php esc_html_e( 'We welcome families to visit RCGEN Educare and meet our team. See our facilities, meet the teachers, and ensure it is the right fit for your child.', 'rcgen-theme' ); ?></p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num" style="background:var(--color-educare);">4</div>
+        <div class="step-body">
+          <h4><?php esc_html_e( 'Complete Registration', 'rcgen-theme' ); ?></h4>
+          <p><?php esc_html_e( 'Once accepted, complete the registration forms and your child can begin at RCGEN Educare. We will ensure a warm and welcoming start for every new learner.', 'rcgen-theme' ); ?></p>
+        </div>
+      </div>
+    </div>
+    <div class="callout-box fade-in" style="background:#e0f2fe;border-left-color:var(--color-educare);margin-top:32px;">
+      <p>&#x1F4E7; <strong><?php esc_html_e( 'Enquire now:', 'rcgen-theme' ); ?></strong>
+      <a href="mailto:info@rcgen.org.za">info@rcgen.org.za</a> <?php esc_html_e( '· Website:', 'rcgen-theme' ); ?> <a href="https://rcgen.org.za">rcgen.org.za</a></p>
     </div>
   </div>
 </section>

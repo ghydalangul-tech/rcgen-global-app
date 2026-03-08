@@ -18,6 +18,9 @@ get_header();
       &#x1F91D; <?php esc_html_e( 'Community Welfare &amp; Humanitarian Aid', 'rcgen-theme' ); ?>
     </span>
     <h1><?php esc_html_e( 'RCGEN Group', 'rcgen-theme' ); ?></h1>
+    <p style="color:rgba(255,255,255,0.85);font-size:1rem;margin-top:8px;font-style:italic;">
+      <?php esc_html_e( 'Uplifting Communities. Restoring Dignity. Enabling Hope.', 'rcgen-theme' ); ?>
+    </p>
     <div class="breadcrumb">
       <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'rcgen-theme' ); ?></a>
       <span><?php esc_html_e( 'RCGEN Group', 'rcgen-theme' ); ?></span>
@@ -164,7 +167,7 @@ get_header();
       <a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="btn btn-primary">
         &#x2709; <?php esc_html_e( 'Get In Touch', 'rcgen-theme' ); ?>
       </a>
-      <a href="<?php echo esc_url( home_url( '/donate' ) ); ?>" class="btn btn-outline">
+      <a href="<?php echo esc_url( home_url( '/donations' ) ); ?>" class="btn btn-outline">
         &#x2764; <?php esc_html_e( 'Support Our Work', 'rcgen-theme' ); ?>
       </a>
     </div>

@@ -16,6 +16,9 @@ get_header();
       <?php esc_html_e( 'Our Story', 'rcgen-theme' ); ?>
     </span>
     <h1><?php esc_html_e( 'About RCGEN', 'rcgen-theme' ); ?></h1>
+    <p style="color:rgba(255,255,255,0.85);font-size:1rem;margin-top:8px;font-style:italic;">
+      <?php esc_html_e( 'One Vision. Four Organisations. One Community.', 'rcgen-theme' ); ?>
+    </p>
     <div class="breadcrumb">
       <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'rcgen-theme' ); ?></a>
       <span><?php esc_html_e( 'About Us', 'rcgen-theme' ); ?></span>
@@ -35,6 +38,62 @@ get_header();
         <p><?php esc_html_e( 'Today, RCGEN touches hundreds of lives every week through worship, education, feeding, and community welfare. We are not a government agency or a large NGO — we are a community caring for its own, sustained by faith, volunteerism, and the generosity of supporters who believe in the dignity of every person.', 'rcgen-theme' ); ?></p>
       </div>
       <div class="page-split-img" aria-hidden="true">&#x1F1FF;&#x1F1E6;</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MISSION / VISION / VALUES ════════════════════════════════════════════ -->
+<section class="page-section page-section--blue">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-tag"><?php esc_html_e( 'Our Foundation', 'rcgen-theme' ); ?></span>
+      <h2><?php esc_html_e( 'Mission, Vision &amp; Values', 'rcgen-theme' ); ?></h2>
+    </div>
+
+    <div class="grid-2 fade-in" style="gap:32px;margin-top:40px;">
+      <div class="callout-box" style="background:#eff6ff;border-left-color:var(--color-navy);">
+        <h4 style="color:var(--color-navy);margin-bottom:10px;font-family:var(--font-heading);">
+          &#x1F3AF; <?php esc_html_e( 'Our Mission', 'rcgen-theme' ); ?>
+        </h4>
+        <p><?php esc_html_e( 'To serve the Vrygrond community through faith-driven worship, quality early childhood education, weekly feeding programmes, and holistic community welfare — transforming lives in the name of Jesus Christ.', 'rcgen-theme' ); ?></p>
+      </div>
+      <div class="callout-box" style="background:#eff6ff;border-left-color:var(--color-gold);">
+        <h4 style="color:var(--color-gold-dark);margin-bottom:10px;font-family:var(--font-heading);">
+          &#x1F441; <?php esc_html_e( 'Our Vision', 'rcgen-theme' ); ?>
+        </h4>
+        <p><?php esc_html_e( 'A Vrygrond where every child is educated, every family is fed, and every person lives with dignity and hope — a community transformed by the love of God and the service of His people.', 'rcgen-theme' ); ?></p>
+      </div>
+    </div>
+
+    <div class="section-header fade-in" style="margin-top:56px;">
+      <h3><?php esc_html_e( 'Our Core Values', 'rcgen-theme' ); ?></h3>
+    </div>
+    <div class="services-grid fade-in" style="margin-top:32px;">
+      <div class="service-card" style="border-top:4px solid var(--color-church);">
+        <span class="service-icon">&#x1F54A;</span>
+        <h4><?php esc_html_e( 'Faith', 'rcgen-theme' ); ?></h4>
+        <p><?php esc_html_e( 'Everything we do flows from our belief in Jesus Christ and His call to love God and love our neighbours as ourselves. (Deuteronomy 6:6-7)', 'rcgen-theme' ); ?></p>
+      </div>
+      <div class="service-card" style="border-top:4px solid var(--color-foundation);">
+        <span class="service-icon">&#x1F91D;</span>
+        <h4><?php esc_html_e( 'Service', 'rcgen-theme' ); ?></h4>
+        <p><?php esc_html_e( 'We serve without expectation — giving our time, resources, and energy to those who need it most in the Vrygrond community.', 'rcgen-theme' ); ?></p>
+      </div>
+      <div class="service-card" style="border-top:4px solid var(--color-educare);">
+        <span class="service-icon">&#x2B50;</span>
+        <h4><?php esc_html_e( 'Excellence', 'rcgen-theme' ); ?></h4>
+        <p><?php esc_html_e( 'We believe the people we serve deserve the best. We pursue excellence in everything — from our crèche curriculum to our feeding programme.', 'rcgen-theme' ); ?></p>
+      </div>
+      <div class="service-card" style="border-top:4px solid var(--color-gold);">
+        <span class="service-icon">&#x1F4DC;</span>
+        <h4><?php esc_html_e( 'Integrity', 'rcgen-theme' ); ?></h4>
+        <p><?php esc_html_e( 'We operate with transparency and accountability. Donors and partners can trust that every rand and every resource is used for its intended purpose.', 'rcgen-theme' ); ?></p>
+      </div>
+      <div class="service-card" style="border-top:4px solid var(--color-group);">
+        <span class="service-icon">&#x1F46B;</span>
+        <h4><?php esc_html_e( 'Unity', 'rcgen-theme' ); ?></h4>
+        <p><?php esc_html_e( 'Though we are four distinct organisations, we are one family with one heart. Together we are stronger, and together we achieve more for Vrygrond.', 'rcgen-theme' ); ?></p>
+      </div>
     </div>
   </div>
 </section>
@@ -135,34 +194,39 @@ get_header();
       <div class="team-card fade-in">
         <div class="team-avatar">&#x1F468;&#x200D;&#x1F4BC;</div>
         <div class="team-card-body">
-          <h4><?php esc_html_e( 'Senior Leadership', 'rcgen-theme' ); ?></h4>
-          <p><?php esc_html_e( 'RCGEN Church — Vrygrond', 'rcgen-theme' ); ?></p>
+          <h4><?php esc_html_e( 'Ghydala', 'rcgen-theme' ); ?></h4>
+          <p><strong><?php esc_html_e( 'Founder &amp; Director', 'rcgen-theme' ); ?></strong><br>
+          <?php esc_html_e( 'RCGEN — Vrygrond, Cape Town', 'rcgen-theme' ); ?><br>
+          <a href="mailto:info@rcgen.org.za">info@rcgen.org.za</a></p>
         </div>
       </div>
       <div class="team-card fade-in fade-in-delay-1">
         <div class="team-avatar">&#x1F469;&#x200D;&#x1F3EB;</div>
         <div class="team-card-body">
           <h4><?php esc_html_e( 'ECD Director', 'rcgen-theme' ); ?></h4>
-          <p><?php esc_html_e( 'RCGEN Educare Centre', 'rcgen-theme' ); ?></p>
+          <p><?php esc_html_e( 'RCGEN Educare Centre', 'rcgen-theme' ); ?><br>
+          <?php esc_html_e( 'Registered ECD Practitioner', 'rcgen-theme' ); ?></p>
         </div>
       </div>
       <div class="team-card fade-in fade-in-delay-2">
         <div class="team-avatar">&#x1F469;&#x200D;&#x1F373;</div>
         <div class="team-card-body">
           <h4><?php esc_html_e( 'Feeding Programme Manager', 'rcgen-theme' ); ?></h4>
-          <p><?php esc_html_e( 'RCGEN Foundation', 'rcgen-theme' ); ?></p>
+          <p><?php esc_html_e( 'RCGEN Foundation', 'rcgen-theme' ); ?><br>
+          <?php esc_html_e( 'Weekly Feeding Scheme Coordinator', 'rcgen-theme' ); ?></p>
         </div>
       </div>
       <div class="team-card fade-in fade-in-delay-3">
         <div class="team-avatar">&#x1F468;&#x200D;&#x1F91D;&#x200D;&#x1F468;</div>
         <div class="team-card-body">
           <h4><?php esc_html_e( 'Welfare Coordinator', 'rcgen-theme' ); ?></h4>
-          <p><?php esc_html_e( 'RCGEN Group', 'rcgen-theme' ); ?></p>
+          <p><?php esc_html_e( 'RCGEN Group', 'rcgen-theme' ); ?><br>
+          <?php esc_html_e( 'Community Welfare &amp; Humanitarian Aid', 'rcgen-theme' ); ?></p>
         </div>
       </div>
     </div>
     <div class="callout-box fade-in" style="margin-top:40px;max-width:700px;margin-left:auto;margin-right:auto;">
-      <p><?php esc_html_e( 'Want to know more about our leadership or partner with RCGEN? Contact us at rcgen.org.za or reach out through the form on our Contact page.', 'rcgen-theme' ); ?></p>
+      <p><?php esc_html_e( 'Want to know more about our leadership or partner with RCGEN? Contact us at', 'rcgen-theme' ); ?> <a href="mailto:info@rcgen.org.za">info@rcgen.org.za</a> <?php esc_html_e( '· Website:', 'rcgen-theme' ); ?> <a href="https://rcgen.org.za">rcgen.org.za</a></p>
     </div>
   </div>
 </section>
